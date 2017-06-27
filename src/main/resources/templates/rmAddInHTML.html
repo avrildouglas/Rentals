@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add a New Listing</title>
+</head>
+<body>
+<h1>Room Entry Information Screen</h1>
+<form action "#" th:action="@{/room"} th:object="${roomlist}" method="post">
+	<p>Room Number:<input type="text" th:field="*{inRmNum}" /><span 
+	th:if="${#fields.hasErrors('inRmNum')}" th:errors="*{inRmNum}">
+	Room Number Error</span></p>
+	<p>Address:<input type="text" th:field="*{inAddress}" /><span 
+	th:if="${#fields.hasErrors('inAddress')}" th:errors="*{inAddress}">
+	Address Error</span></p>
+	<p>City:<input type="text" th:field="*{inCity}" /><span 
+	th:if="${#fields.hasErrors('inCity')}" th:errors="*{inCity}">
+	City Error</span></p>
+	<p>State:<input type="text" th:field="*{inState}" /><span 
+	th:if="${#fields.hasErrors('inState')}" th:errors="*{inState}">
+	State Error</span></p>
+	<p>Zip Code:<input type="text" th:field="*{inZip}" /><span 
+	th:if="${#fields.hasErrors('inZip')}" th:errors="*{inZip}">
+	Zip Code Error</span></p><br>
+	
+	<h1>Room Details:</h1>
+	
+	<p>Description:<br><textarea th:field="*{inDescript}" rows="10" cols="60"></textarea><span 
+	th:if="${#fields.hasErrors('inDescript')}" th:errors="*{inDescript}">
+	Description Error</span></p><br>
+	<p>Rules:<br><textarea th:field="*{inRules}" rows="10" cols="60"></textarea><span
+	th:if="${#fields.hasErrors('inRules')}" th:errors="*{inRules}">
+	Rules Error</span></p>
+	<p>Wifi (Yes):<input type="radio" th:field="
+	*{inWifi}" checked/><span
+	th:if="${#fields.hasErrors('inWifi')}" th:errors="*{inWifi}">
+	Wifi Error</span></p>
+	(No):<input type="radio" th:field="
+	*{inWifi}" /><span
+	th:if="${#fields.hasErrors('inWifi')}" th:errors="*{inWifi}">
+	Wifi Error</span></p>
+	<p>Cable (none):<input type="radio" th:field="
+	*{inCable}" checked/><span
+	th:if="${#fields.hasErrors('inCable')}" th:errors="*{inCable}">
+	Cable Error</span></p>
+	(basic):<input type="radio" th:field="*{inCable}" /><span
+	th:if="${#fields.hasErrors('inCable')}" th:errors="*{inCable}">
+	Cable Error</span></p>
+	(premium):<input type="radio" th:field="*{inCable}" /><span
+	th:if="${#fields.hasErrors('inCable')}" th:errors="*{inCable}">
+	Cable Error</span></p>
+	<p>Private Bath (Yes):<input type="radio" th:field="
+	*{inPBath}" checked/><span
+	th:if="${#fields.hasErrors('inPBath')}" th:errors="*{inPBath}">
+	Private Bath Error</span></p>
+	(No):<input type="radio" th:field="
+	*{inPBath}"/><span
+	th:if="${#fields.hasErrors('inPBath')}" th:errors="*{inPBath}">
+	Private Bath Error</span></p>
+		
+</form>
+
+</body>
+</html>
+
+	

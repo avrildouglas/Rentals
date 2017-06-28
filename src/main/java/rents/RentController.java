@@ -27,8 +27,8 @@ public class RentController {
 	@GetMapping(path="/add") // Map ONLY GET Requests
 public @ResponseBody String addNewRoom (@RequestParam String inRmNum, @RequestParam String inAddress, @RequestParam String inCity, 
 		@RequestParam String inState, @RequestParam String inZip, @RequestParam String inPrice, @RequestParam String inDescript,
-		@RequestParam String inRules, @RequestParam String inWifi, @RequestParam String inCable,
-		@RequestParam String inPBath){
+		@RequestParam String inRules, @RequestParam boolean inWifi, @RequestParam String inCable,
+		@RequestParam boolean inPBath){
 		// @ResponseBody means the returned String is the response, not a view name
 	// @RequestParam means it is a parameter from the GET or POST request
 
@@ -47,14 +47,22 @@ public @ResponseBody String addNewRoom (@RequestParam String inRmNum, @RequestPa
 	rentalRepository.save(r);
 	
 	
-	return "rmAddInHTML";
+	return "rmAdd_UpdateInHTML";
 }
+		
+	@GetMapping("/")
+	public String MainMenuForm(Model model){
+		model.addAttribute("roomlist", new Room());
+		//START HERE TO DISPLAY THE MAIN MENU TO SHOW LIST
+		return "MainMenuHTML";
+	}
+	
 	
 	@GetMapping("/room")
 	public String roomForm(Model model){
 		model.addAttribute("roomlist", new Room());
-		return "rmListHTML";
-	}
+		return "rmListOutHTML";
+	}	
 	
 	@PostMapping("/room")
 	public String roomSubmit(@Valid Room roomlist, BindingResult bindingResult){
@@ -64,6 +72,13 @@ public @ResponseBody String addNewRoom (@RequestParam String inRmNum, @RequestPa
 		}
 		return "redirect:/add";
 	}
+	
+	@RequestMapping("/list")
+    public String listBooks(Model model){
+        model.addAttribute("", Repository.findAll());
+        return "list";
+    }
+	
 	
 	@GetMapping(path="/all")
 	public @ResponseBody Iterable<Room> getAllRooms()

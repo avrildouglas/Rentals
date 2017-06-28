@@ -19,9 +19,9 @@ public class Room {
 	private String modPrice;
 	private String modDescript;
 	private String modRules;
-	private String modWifi;
+	private boolean modWifi;
 	private String modCable;
-	private String modPBath;
+	private boolean modPBath;
 	
 	
 	public long getModRoomId() {
@@ -97,11 +97,11 @@ public class Room {
 		this.modRules = modRules;
 	}
 
-	public String getModWifi() {
+	public boolean getModWifi() {
 		return modWifi;
 	}
 
-	public void setModWifi(String modWifi) {
+	public void setModWifi(boolean modWifi) {
 		this.modWifi = modWifi;
 	}
 
@@ -113,11 +113,11 @@ public class Room {
 		this.modCable = modCable;
 	}
 
-	public String getModPBath() {
+	public boolean getModPBath() {
 		return modPBath;
 	}
 
-	public void setModPBath(String modPBath) {
+	public void setModPBath(boolean modPBath) {
 		this.modPBath = modPBath;
 	}
 

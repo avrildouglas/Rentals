@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+      <title>Room List Information</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+      <h1>Room List Information</h1>
+      	<p th:text="'modRoomId: ' + ${roomlist.modRoomId}" />
+      	<p th:text="'modRmNum: ' + ${roomlist.inRmNum}" />
+     	<p th:text="'modAddress: ' + ${roomlist.inAddress}" />
+     	<p th:text="'modCity: ' + ${roomlist.inCity}" />
+     	<p th:text="'modState: ' + ${roomlist.inState}" />
+     	<p th:text="'modZip: ' + ${roomlist.inZip}" />
+     	<p th:text="'modPrice: ' + ${roomlist.inPrice}" />
+      	<p th:text="'modDescript: ' + ${roomlist.inDescript}" />
+     	<p th:text="'modRules: ' + ${roomlist.inRules}" />
+     	<p th:text="'modWifi: ' + ${roomlist.inWifi}" />      	
+      	<p th:text="'modCable: ' + ${roomlist.inCable}" /> 
+      	<p th:text="'modPBath: ' + ${roomlist.inPBath}" /> 
+      <a href="/MainMenuHTML">Return Main Menu - Rooms</a>
+  </body>
+</html>
